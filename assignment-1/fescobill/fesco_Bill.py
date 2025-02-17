@@ -33,8 +33,10 @@ def extract_bill_details(text):
     
     # Extract Due Date (corrected regex for table format)
     match = re.search(r'DUE DATE\s*(\d{2} [A-Z]{3} \d{2})', text)
+    print(match)
     if match:
         details["Due Date"] = match.group(1).strip()
+
     
     # Extract Payable Within Due Date
     match = re.search(r'PAYABLE WITHIN DUE DATE\s*(\d+)', text)
